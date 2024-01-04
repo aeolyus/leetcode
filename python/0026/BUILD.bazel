@@ -1,0 +1,14 @@
+load("@rules_python//python:defs.bzl", "py_library", "py_test")
+
+py_test(
+    name = "0026",
+    srcs = ["test.py"],
+    imports = ["./"],
+    main = "test.py",
+    deps = [":main"],
+)
+
+py_library(
+    name = "main",
+    srcs = ["main.py"],
+)
