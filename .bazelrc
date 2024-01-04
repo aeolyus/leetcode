@@ -1,0 +1,27 @@
+# Pick up host-OS-specific config lines from bazelrc files.
+#
+# For example, if the host OS is Linux and you run bazel build, Bazel picks up
+# lines starting with build:linux. Supported OS identifiers are linux, macos,
+# windows, freebsd, and openbsd. Enabling this flag is equivalent to using
+# --config=linux on Linux, --config=windows on Windows, etc.
+#
+# https://bazel.build/reference/command-line-reference#flag--enable_platform_specific_config
+common --enable_platform_specific_config
+
+# Use an environment with a static value for PATH and does not inherit
+# LD_LIBRARY_PATH.
+#
+# Use --action_env=ENV_VARIABLE if you want to inherit specific environment
+# variables from the client, but note that doing so can prevent cross-user
+# caching if a shared cache is used.
+#
+# https://bazel.build/reference/command-line-reference#flag--incompatible_strict_action_env
+build:linux --incompatible_strict_action_env=true
+
+# Enable the CC toolchain resolution based on platforms.
+# https://github.com/bazelbuild/bazel/issues/7260
+build:linux --incompatible_enable_cc_toolchain_resolution
+
+# Output test errors to stderr
+# https://bazel.build/docs/user-manual#test-output
+test --test_output=errors
