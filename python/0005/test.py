@@ -2,7 +2,7 @@ import unittest
 from main import Solution
 
 
-class Test0001(unittest.TestCase):
+class Test0005(unittest.TestCase):
     def test(self):
         testcases = [
             ["babad", "bab"],
