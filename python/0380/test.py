@@ -1,4 +1,5 @@
 import unittest
+import random
 from main import RandomizedSet
 
 
@@ -12,6 +13,9 @@ class Test0380(unittest.TestCase):
                     [None, True, False, True, 2, True, False, 2]
             ]
         ]
+
+        # Deterministic seed for testing
+        random.seed(0)
 
         for t in testcases:
             instructions, values, expecteds = t
