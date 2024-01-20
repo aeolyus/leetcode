@@ -25,3 +25,7 @@ build:linux --incompatible_enable_cc_toolchain_resolution
 # Output test errors to stderr
 # https://bazel.build/docs/user-manual#test-output
 test --test_output=errors
+
+# Print information only about unsuccessful tests
+# https://bazel.build/reference/command-line-reference#flag--test_summary
+test --test_summary=terse
