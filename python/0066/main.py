@@ -11,7 +11,6 @@ class Solution:
             n += carry
             carry = n//10
             n = n % 10
-            print(n, carry)
             digits[i] = n
         if carry > 0:
             digits = [carry] + digits

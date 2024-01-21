@@ -20,6 +20,4 @@ class Solution:
                 matrix[-ring - 1][-i - 1] = b
                 matrix[-i - 1][ring] = c
 
-                print(a, b, c, d)
-                print(matrix)
             ring += 1
