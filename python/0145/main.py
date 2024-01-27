@@ -14,11 +14,20 @@ class Solution:
         result = []
         if root is None:
             return result
-        stack = [root]
-        while stack:
-            node = stack.pop()
-            result.append(node.val)
-            for n in [node.right, node.left]:
-                if n:
-                    stack.append(n)
-        return result[::-1]
+        stack = []
+        curr = root
+        while curr or stack:
+            while curr:
+                if curr.right:
+                    stack.append(curr.right)
+                stack.append(curr)
+                curr = curr.left
+            curr = stack.pop()
+            if curr.right and stack and stack[-1] == curr.right:
+                stack.pop()
+                stack.append(curr)
+                curr = curr.right
+            else:
+                result.append(curr.val)
+                curr = None
+        return result
