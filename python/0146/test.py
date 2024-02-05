@@ -2,7 +2,7 @@ import unittest
 from main import LRUCache
 
 
-class Test0001(unittest.TestCase):
+class Test0146(unittest.TestCase):
     def test(self):
         testcases = [
             [
