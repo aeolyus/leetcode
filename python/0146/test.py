@@ -26,7 +26,6 @@ class Test0146(unittest.TestCase):
                     actual = cache.put(*args[i])
                 elif instr == "get":
                     actual = cache.get(args[i][0])
-                print(instr, args[i], cache.node_map)
                 self.assertEqual(expected[i], actual)
 
 

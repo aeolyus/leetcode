@@ -12,5 +12,4 @@ class Solution:
         for word in paragraph.lower().split():
             if word not in banned_set:
                 count[word] += 1
-        print(count.items())
         return max(count.items(), key=lambda i: i[1])[0]
