@@ -1,5 +1,6 @@
 import unittest
 from main import Solution
+import random
 
 
 class Test0528(unittest.TestCase):
@@ -17,6 +18,9 @@ class Test0528(unittest.TestCase):
                 [None, 1, 1, 1, 1, 0],
             ],
         ]
+
+        # Deterministic seed for testing
+        random.seed(3)
 
         for tc in testcases:
             instrs, args, expecteds = tc

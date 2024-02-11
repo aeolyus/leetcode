@@ -14,9 +14,18 @@ class Solution:
 
     def pickIndex(self) -> int:
         n = random.randint(1, self.total)
-        for i, w in enumerate(self.weights):
-            if n <= w:
-                return i
+        return self.bin_search(self.weights, n)
+
+    def bin_search(self, arr: List[int], k) -> int:
+        lo = 0
+        hi = len(arr) - 1
+        while lo < hi:
+            mid = (hi + lo)//2
+            if arr[mid] >= k:
+                hi = mid
+            else:
+                lo = mid + 1
+        return hi
 
 
 # Your Solution object will be instantiated and called as such:
