@@ -1,6 +1,6 @@
 import unittest
-from typing import Optional, List
-from main import Solution, TreeNode
+from main import Solution
+from python.lib.tree import TreeNode
 
 
 class Test0108(unittest.TestCase):
@@ -13,22 +13,8 @@ class Test0108(unittest.TestCase):
         for i in testcases:
             nums, expected = i
             s = Solution()
-            actual = tree_to_lst(s.sortedArrayToBST(nums))
+            actual = TreeNode.tree_to_lst(s.sortedArrayToBST(nums))
             self.assertEqual(expected, actual)
-
-
-def tree_to_lst(root: Optional[TreeNode]) -> List[int]:
-    result = []
-    queue = [root]
-    while queue:
-        node = queue.pop(0)
-        if node is None:
-            result.append(node)
-            continue
-        result.append(node.val)
-        if node.left is not None or node.right is not None:
-            queue.extend((node.left, node.right))
-    return result
 
 
 if __name__ == '__main__':
