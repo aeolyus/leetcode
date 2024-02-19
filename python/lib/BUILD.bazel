@@ -5,5 +5,9 @@ package(default_visibility = ["//visibility:public"])
 py_library(
     name = "tree",
     srcs = ["tree.py"],
-    visibility = ["//visibility:public"],
+)
+
+py_library(
+    name = "list",
+    srcs = ["list.py"],
 )
