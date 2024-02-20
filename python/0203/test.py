@@ -1,5 +1,6 @@
 import unittest
-from main import Solution, ListNode
+from main import Solution
+from python.lib.list import ListNode
 
 
 class Test0203(unittest.TestCase):

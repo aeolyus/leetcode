@@ -1,6 +1,6 @@
 import unittest
-from typing import List, Optional
-from main import Solution, ListNode
+from main import Solution
+from python.lib.list import ListNode
 
 
 class Test0002(unittest.TestCase):
@@ -15,26 +15,10 @@ class Test0002(unittest.TestCase):
             l1, l2, expected = i
             s = Solution()
             actual = s.addTwoNumbers(
-                self.list_to_linked_list(l1),
-                self.list_to_linked_list(l2),
+                ListNode.list_to_linked_list(l1),
+                ListNode.list_to_linked_list(l2),
             )
-            self.assertEqual(expected, self.linked_list_to_list(actual))
-
-    def list_to_linked_list(self, lst: List) -> Optional[ListNode]:
-        prev = None
-        head = None
-        if lst:
-            for i in lst[::-1]:
-                head = ListNode(i, prev)
-                prev = head
-        return head
-
-    def linked_list_to_list(self, head: Optional[ListNode]) -> List:
-        actual = []
-        while head:
-            actual.append(head.val)
-            head = head.next
-        return actual
+            self.assertEqual(expected, ListNode.linked_list_to_list(actual))
 
 
 if __name__ == '__main__':

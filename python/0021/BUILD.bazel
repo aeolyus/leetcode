@@ -6,10 +6,14 @@ py_test(
     srcs = ["test.py"],
     imports = ["./"],
     main = "test.py",
-    deps = [":main"],
+    deps = [
+        ":main",
+        "//python/lib:list",
+    ],
 )
 
 py_library(
     name = "main",
     srcs = ["main.py"],
+    deps = ["//python/lib:list"],
 )
