@@ -1,6 +1,17 @@
-load("@rules_cc//cc:defs.bzl", "cc_library")
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_test(
+    name = "0003",
+    size = "small",
+    srcs = ["test.cc"],
+    deps = [
+        ":sol",
+        "@googletest//:gtest_main",
+    ],
+)
 
 cc_library(
     name = "sol",
     srcs = ["sol.cc"],
+    hdrs = ["sol.h"],
 )
