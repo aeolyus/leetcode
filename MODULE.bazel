@@ -6,3 +6,12 @@ module(
 bazel_dep(name = "rules_python", version = "0.27.1")
 bazel_dep(name = "rules_cc", version = "0.0.9")
 bazel_dep(name = "googletest", version = "1.14.0")
+
+# Provide cross-platform autocomplete for C language family
+# Usage: `bazel run @hedron_compile_commands//:refresh_all`
+bazel_dep(name = "hedron_compile_commands", dev_dependency = True)
+git_override(
+    module_name = "hedron_compile_commands",
+    commit = "204aa593e002cbd177d30f11f54cff3559110bb9",
+    remote = "https://github.com/hedronvision/bazel-compile-commands-extractor.git",
+)
