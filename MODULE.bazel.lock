@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "143003bd140da5390d5c64c400e550303f048597a3c98ca1e1cb04c754e7c1bb",
+  "moduleFileHash": "cb04b9ac9a5cc78df4fb03bd02dc1a5ca855f7c6f43a014adf75b5cab02b8337",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -43,7 +43,10 @@
             {
               "tagName": "toolchain",
               "attributeValues": {
-                "llvm_version": "16.0.4"
+                "llvm_version": "16.0.4",
+                "sysroot": {
+                  "linux-x86_64": "'@@org_chromium_sysroot_linux_x64//:sysroot'"
+                }
               },
               "devDependency": false,
               "location": {
@@ -3359,7 +3362,9 @@
               "opt_compile_flags": {},
               "opt_link_flags": {},
               "stdlib": {},
-              "sysroot": {},
+              "sysroot": {
+                "linux-x86_64": "'@@org_chromium_sysroot_linux_x64//:sysroot'"
+              },
               "target_settings": {},
               "toolchain_roots": {},
               "unfiltered_compile_flags": {}
