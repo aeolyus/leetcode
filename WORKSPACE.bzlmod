@@ -1,6 +1,6 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-# This sysroot is used by github.com/vsco/bazel-toolchains.
+# Hermetic sysroot based on chromium's sysroot images
 http_archive(
     name = "org_chromium_sysroot_linux_x64",
     build_file_content = """
@@ -10,6 +10,6 @@ filegroup(
   visibility = ["//visibility:public"],
 )
 """,
-    sha256 = "84656a6df544ecef62169cfe3ab6e41bb4346a62d3ba2a045dc5a0a2ecea94a3",
-    urls = ["https://commondatastorage.googleapis.com/chrome-linux-sysroot/toolchain/2202c161310ffde63729f29d27fe7bb24a0bc540/debian_stretch_amd64_sysroot.tar.xz"],
+    sha256 = "498e9b509fd190360ddec6111badb44f9390e00840b5b7c8f640bc2f95f1ddb1",
+    urls = ["https://commondatastorage.googleapis.com/chrome-linux-sysroot/toolchain/ec989b96c5f1e235182e5f2a5c9d23b3eb4101e0/debian_bullseye_amd64_sysroot.tar.xz"],
 )
